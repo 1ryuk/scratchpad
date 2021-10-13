@@ -12,7 +12,7 @@ Allow scratchpad to be executable.
 
 Change $FOLDER variable if you wish to save notes somewhere else
 
-Choose which program you will write the notes in by editing your *$EDITOR* variable in your shell (make sure to refresh it!)
+Choose which program you will write the notes in by editing your *$EDITOR* variable for your shell of choice
 
 	export EDITOR=vim
 
