@@ -3,55 +3,43 @@
 # --- Scratchpad ---
 #
 # The aim of this script was to make it easy for me to
-# organize my thoughts in a *notebook* style of folder
-# and parse through lots of text so that I don't repeat mistakes
-# that I already have solved in the past!
+# organize my thoughts with text files on a static site.
+# I like this approach as I can parse through lots of text
+# quickly and so that I don't repeat mistakes that I already
+# have solved in the past!
+#
 #
 # This script will be saved as a markdown file
-# so that they can easily be converted to pdf/html.
+# so that they can easily be converted to html/pdf.
 #
-#  --- Setup ---
 #
-# 1. Allow scratchpad to be executable. (chmod +x scratchpad)
-#
-# 2. Change $FOLDER variable if you wish to save notes somewhere else
-#
-# 3. Export your $EDITOR variable in your shell (.bashrc / .zshrc)
-#	 and refresh it (source .bashrc)
-#
-#	 ex) export EDITOR=vim
-#
-# 4. Add this script to the crontab for your user
-#
-#	 ex)
-#    //Open your user's crontab.
-#	 [user@home ~]$ crontab -e
-#
-#	 // The following will run scratchpad every 3 hours.
-#
-#	  0 */3 * * * ~/scripts/scratchpad
+# Please change the path in the FOLDER variable to where
+# you would like to save your notes! You may also edit the template
+# using Markdown syntax!
 #
 
 export DISPLAY=":0.0"
 
-FOLDER=${1:-"~/vimwiki/notes"}
-CURRENT_DATE=$(date "+%Y%m%d%H%M")
+FOLDER=${1:-"/home/$USER/"}
+CURRENT_DATE=$(date "+%Y-%m-%d_%H:%M")
+
+if [[ ! -e ${FOLDER}/${CURRENT_DATE}.md ]]; then
 
 touch ${FOLDER}/${CURRENT_DATE}.md
 
 cat >> ${FOLDER}/${CURRENT_DATE}.md << EOF
-===================
-Thoughts:
-===================
+# ${CURRENT_DATE} :
 
-===================
-Problem:
-===================
+### John Doe
 
-===================
-Solution:
-===================
+## Problem:
+
+## Thoughts:
+
+## Solution:
 
 EOF
+
+fi
 
 $EDITOR ${FOLDER}/${CURRENT_DATE}.md
