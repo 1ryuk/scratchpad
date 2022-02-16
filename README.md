@@ -22,6 +22,5 @@ Add this script to the crontab for your user
 
 The following example will run scratchpad every 3 hours.
 
-	crontab -e
-
+	$ crontab -e
 	0 */3 * * * ~/scripts/scratchpad.sh
