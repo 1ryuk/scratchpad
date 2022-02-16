@@ -1,14 +1,16 @@
 # Scratchpad
 
-The aim of this script was to make it easy for me to organize my thoughts in a *notebook* style of folder and parse through lots of text so that I don't repeat mistakes that I already have solved in the past!
+The aim of this script was to make it easy for me to organize my thoughts with text files on a static site.
 
-This script will be saved as a markdown file so that they can easily be converted to PDF or HTML.
+I like this approach as I can parse through lots of text quickly and so that I don't repeat mistakes that I already have solved in the past!
+
+This script will be saved as a markdown file so that they can easily be converted to html/pdf.
 
 ## Setup
 
 Allow scratchpad to be executable.
 
-	chmod +x scratchpad
+	chmod +x scratchpad.sh
 
 Change $FOLDER variable if you wish to save notes somewhere else
 
@@ -22,4 +24,4 @@ The following example will run scratchpad every 3 hours.
 
 	crontab -e
 
-	0 */3 * * * ~/scripts/scratchpad
+	0 */3 * * * ~/scripts/scratchpad.sh

@@ -23,18 +23,19 @@ export DISPLAY=":0.0"
 FOLDER=${1:-"/home/$USER/"}
 CURRENT_DATE=$(date "+%Y-%m-%d_%H:%M")
 
-if [[ ! -e ${FOLDER}/${CURRENT_DATE}.md ]]; then
+if [ ! -e "${FOLDER}/${CURRENT_DATE}.md" ]; then
 
-touch ${FOLDER}/${CURRENT_DATE}.md
+touch "${FOLDER}/${CURRENT_DATE}.md"
 
-cat >> ${FOLDER}/${CURRENT_DATE}.md << EOF
+cat >> "${FOLDER}/${CURRENT_DATE}.md" << EOF
 # ${CURRENT_DATE} :
-
 ### John Doe
 
 ## Problem:
 
+
 ## Thoughts:
+
 
 ## Solution:
 
@@ -42,4 +43,4 @@ EOF
 
 fi
 
-$EDITOR ${FOLDER}/${CURRENT_DATE}.md
+$EDITOR "${FOLDER}/${CURRENT_DATE}.md"
